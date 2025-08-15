@@ -1,0 +1,1 @@
+# HLX_Auto_Join_Default_Class
