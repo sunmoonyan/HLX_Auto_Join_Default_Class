@@ -10,12 +10,6 @@ ix.config.Add("setFactionModel", true, "Set automatically faction or class model
 
 if SERVER then
     local character = ix.meta.character
-    local _oldSetFaction = character.SetFaction
-
-    function character:SetFaction(faction, ...)
-        _oldSetFaction(self, faction, ...)
-        hook.Run("OnCharacterTransferred", self, faction)
-    end
 
     hook.Add("OnCharacterTransferred", "SetDefaultClass", function(character, faction)
         character:SetDefaultClass(faction)
